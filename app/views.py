@@ -1,5 +1,6 @@
 from flask import render_template
-from app import app
+from app import app, db
+from app.models import *
 
 @app.route('/')
 @app.route('/index')
@@ -8,22 +9,14 @@ def index():
 
 @app.route('/senators')
 def senators():
-    user = {'nickname': 'Ana'}  # fake user
-    senators = [  # array of senators
-        {
-            'senator': {'nickname': 'Acir Gurgacz'},
-            'party': 'PDT-RO'
-        },
-        {
-            'senator': {'nickname': 'Aécio Neves'},
-            'party': 'PSDB-MG'
-        }
-    ]
+    senators = Senator.query.all()
     return render_template("senators.html", title='Senadores', senators=senators)
 
 @app.route('/propositions')
 def propositions():
-    return render_template("propositions.html", title='Proposições')
+    propositions = Proposition.query.all()
+    votes = Vote.query.all()
+    return render_template("propositions.html", title='Proposições', propositions=propositions, votes=votes)
 
 @app.route('/about')
 def about():
