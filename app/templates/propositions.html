@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
   {% for proposition in propositions %}
-  <div><p>{{ proposition.name }} </p></div>
+  <div><a href="/proposition/{{ proposition.name }}">{{ proposition.name }} </a></div>
   {% endfor %}
   {% for vote in votes %}
   <div><p>{{ vote.senator }} - {{ vote.proposition }} - {{ vote.vote.value }} </p></div>
