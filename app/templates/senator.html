@@ -1,8 +1,34 @@
 {% extends "index.html" %}
 {% block content %}
-    <div>
-        <p>{{ senator.name }} </p>
-        <p>{{ senator.party }} </p>
-        <p>{{ senator.description }} </p>
+    <section class="container">
+    <div class="senadoresIntro">
+      <h1>senadores</h1>
+      <h2>saiba como votou cada senador</h2>
     </div>
+  </section>
+  <!-- aqui começa a minha segunda dobra -->
+  <section class="container flex profile">
+    <div class="senadoresProfile">
+      <div class="firstdiv">
+        <img src="imagesSenadores/" alt="">
+      </div>
+      <div class="boxSenadores">
+        <div class="contentName flex">
+          <p>{{ senator.name }} </p>
+          <span class="socialSenador">
+          <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </span>
+        </div>
+        <div class="contentParty">
+          <p>({{ senator.party }}-{{ senator.state }})</p>
+        </div>
+        <div class="contentBio">
+          <p>{{ senator.description }}</p>
+          <i class="sourceBio">fonte: Wikipédia</i>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
