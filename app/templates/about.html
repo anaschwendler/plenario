@@ -1,1 +1,63 @@
 {% extends "index.html" %}
+{% block content %}
+
+  <section class="container">
+    <div class="sobreIntro" alt="Foto: Ana Volpe/Agência Senado - 13.dez.2016">
+      <h1>sobre</h1>
+      <h2>a criação do plenário</h2>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="sobreContent flex">
+      <div id="picGabr" class="flex noBorder">
+        <img src="{{ url_for('static', filename='imagens/gifPlenarioReady.gif') }}" alt="">
+      </div>
+      <div id="bioGabr">
+        <p>O plenário é uma ferramenta open source para o controle social. Esta versão inicial apresenta os dados de votações do Senado.</p>
+
+        <p>O site de monitoramento online procura unir interesse público, transparência e visualização de dados.</p>
+
+        <p>O projeto foi desenvolvido como trabalho final para o curso <i>bootcamp</i> <a href="http://reprograma.com.br/" target="_blank">{reprograma}</a>, com apoio do <a href="https://informatica.sp.senai.br/" target="_blank">Senai de Santa Cecília</a>, unidade localizada em São Paulo.
+
+        <p>Se você gostou e quer ajudar a tornar o projeto sustentável, eis uma forma de colaborar:</p>
+        </br>
+        <div id="donation" class="flex">
+        <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+        <form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post" class="flex pagseguro">
+        <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+        <input type="hidden" name="currency" value="BRL" />
+        <input type="hidden" name="receiverEmail" value="caesar.gabriela@gmail.com" />
+        <input type="hidden" name="iot" value="button" />
+        <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/120x53-doar-cinza.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+        </form>
+        <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+        <!-- INICIO FORMULARIO BOTAO PAYPAL -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="flex paypal">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="QFC4V6RBF3FT2">
+        <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+        </form>
+        <!-- FINAL FORMULARIO BOTAO PAYPAL -->
+        </div>
+
+        <p>Para <a href="http://www.gabrielacaesar.com/" target="_blank">Gabriela Caesar</a>, a ferramenta amplia o leque de mecanismos para fortalecer a participação social.</p>
+      <div id="picGabr">
+        <img src="http://www.gabrielacaesar.com/fotoprofile.jpg" alt="Foto: Arquivo pessoal/Gabriela Caesar">
+      </div>
+        <p>Gabriela é jornalista e programadora front-end, com passagens em redações de São Paulo e Brasília.</p>
+
+        <p>Fale comigo em <a href="mailto:caesar.gabriela@gmail.com">caesar.gabriela@gmail.com</a></p>
+
+        <p>Ou pelas mídias sociais:</p>
+        <p>
+          <a href="https://twitter.com/gabrielacaesar" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/gabrielacaesarLTDA" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/gabrielacaesar/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
