@@ -1,8 +1,55 @@
 {% extends "index.html" %}
 {% block content %}
+  <section class="container">
+    <div class="proposicaoIntro" alt="Foto: Ana Volpe/Agência Senado - 22.fev.2013">
+      <h1>proposições</h1>
+      <h2>propostas, medidas provisórias e projetos votados no Senado</h2>
+    </div>
+  </section>
+
   {% for proposition in propositions %}
-  <div><a href="/proposition/{{ proposition.name }}">{{ proposition.name }} </a></div>
+  <section class="container">
+    <div class="proposicaoBox"><!-- este aqui é o meu donut chart -->
+      <div class="boxChart">
+        <a href="/proposition/{{ proposition.name }}"><canvas id="reformaTrabalhistaChart"></canvas></a>
+      </div>
+      <div class="boxContent">
+        <div class="contentTitle"><!-- este aqui é o nome da proposição -->
+          <a href="/proposition/{{ proposition.name }}"><p>{{ proposition.name }}</p></a>
+        </div>
+        <div class="date">
+          <p>{{ proposition.date }}</p>
+        </div>
+        <div class="contentSubtitle"><!-- este aqui é a descrição da proposição -->
+          <p>O <a href="https://www25.senado.leg.br/web/atividade/materias/-/materia/129049" target="_blank">{{ proposition.name }}</a> {{ proposition.description }}</p>
+        </div>
+        <!-- <div class="contentResult flex"><!-- este aqui é o resultado final da votação da proposição-->
+          <!-- <div class="resultLabel">
+            <a href="/proposition/{{ proposition.name }}">
+            <table>
+              <tr>
+                <td class="greenLine">A favor</td>
+                <td class="redLine">Contra</td>
+                <td class="orangeLine">Não votou</td>
+                <td class="purpleLine">Abstenção</td>
+                <td class="grayLine">Ausência</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>26</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+              </tr>
+            </table>
+            </a>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
   {% endfor %}
+
   {% for vote in votes %}
   <div><p>{{ vote.senator }} - {{ vote.proposition }} - {{ vote.vote.value }} </p></div>
   {% endfor %}
