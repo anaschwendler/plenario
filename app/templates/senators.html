@@ -1,6 +1,22 @@
 {% extends "index.html" %}
 {% block content %}
-  {% for senator in senators %}
-  <div><a href="/senator/{{ senator.name }}">{{ senator.name }} party: <b>{{ senator.party }}</b></a></div>
-  {% endfor %}
+  <section class="container">
+    <div class="senadoresIntro" alt="Foto: Marcos Oliveira/Agência Senado - 30.nov.2016">
+      <h1>senadores</h1>
+      <h2>saiba como votou cada senador</h2>
+    </div>
+  </section>
+  <div class="container">
+    <section id="senadores" class="flex">
+      {% for senator in senators %}
+      <div class="senadoresBox {{ senator.party }} uFRO">
+        <a href="/senator/{{ senator.name }}">
+          <img alt="Foto: Divulgação/Senado Federal" src="imagesSenadores/acirgurgacz12ro.jpg">
+          <p class="senadoresName">{{ senator.name }}</p>
+          <p class="senadoresParty">({{ senator.party }}-{{ senator.state }})</p>
+        </a>
+      </div>
+      {% endfor %}
+    </section>
+  </div>
 {% endblock %}
