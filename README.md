@@ -13,3 +13,8 @@ to fully run the project:
 ```console
 python run.py
 ```
+
+run migrations
+```console
+python manage.py db migrate
+``
