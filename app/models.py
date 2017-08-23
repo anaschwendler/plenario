@@ -16,10 +16,10 @@ class Senator(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), index=True, unique=True)
     party = db.Column(db.String(30), index=True)
-    party_number = db.Column(db.Integer, primary_key=True)
+    party_number = db.Column(db.Integer, primary_key=True, nullable=True)
     state = db.Column(db.String(5), index=True)
     description1 = db.Column(db.Text)
-    description2 = db.Column(db.Text)
+    description2 = db.Column(db.Text, nullable=True)
     source = db.Column(db.String(120))
     twitter = db.Column(db.String(120), unique=True)
     facebook = db.Column(db.String(120), unique=True)
@@ -29,11 +29,11 @@ class Proposition(db.Model):
     __tablename__ = 'proposition'
 
     id = db.Column(db.Integer, primary_key=True)
-    proposition = db.Column(db.String(120), index=True, unique=True)
-    name = db.Column(db.String(120), index=True)
+    name = db.Column(db.String(120), nullable=True)
+    proposition = db.Column(db.String(120), unique=True, index=True)
     description = db.Column(db.Text)
     date = db.Column(db.DateTime)
-    link = db.Column(db.String(120), index=True)
+    link = db.Column(db.String(120), index=True, nullable=True)
 
 class Vote(db.Model):
     __tablename__ = 'vote'
