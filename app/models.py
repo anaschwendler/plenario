@@ -20,9 +20,9 @@ class Senator(db.Model):
     state = db.Column(db.String(5), index=True)
     description1 = db.Column(db.Text)
     description2 = db.Column(db.Text)
-    source = db.Column(db.String(120))
-    twitter = db.Column(db.String(120))
-    facebook = db.Column(db.String(120))
+    source = db.Column(db.String(120), unique=False)
+    twitter = db.Column(db.String(120), unique=False)
+    facebook = db.Column(db.String(120), unique=False)
     instagram = db.Column(db.String(120), unique=False)
 
 class Proposition(db.Model):
