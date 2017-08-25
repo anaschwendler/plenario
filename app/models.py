@@ -23,7 +23,7 @@ class Senator(db.Model):
     source = db.Column(db.String(120))
     twitter = db.Column(db.String(120))
     facebook = db.Column(db.String(120))
-    instagram = db.Column(db.String(120))
+    instagram = db.Column(db.String(120), unique=False)
 
 class Proposition(db.Model):
     __tablename__ = 'proposition'
