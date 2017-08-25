@@ -9,7 +9,7 @@ def index():
 
 @app.route('/senators')
 def senators():
-    senators = Senator.query.order_by('name asc').all()
+    senators = Senator.query.order_by('name').all()
     return render_template("senators.html", title='Senadores', senators=senators)
 
 @app.route('/senator/<senator_name>')
