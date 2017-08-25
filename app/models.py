@@ -1,6 +1,7 @@
 from app import db
 from sqlalchemy.dialects.postgresql import JSON
 import enum
+import unicodedata
 
 class VoteType(enum.Enum):
     __tablename__ = 'votetype'
@@ -24,6 +25,12 @@ class Senator(db.Model):
     twitter = db.Column(db.String(120), unique=False)
     facebook = db.Column(db.String(120), unique=False)
     instagram = db.Column(db.String(120), unique=False)
+
+    def image_url(self):
+        nfkd_form = unicodedata.normalize('NFKD', self.name.lower())
+        normalized_name = nfkd_form.encode('ASCII', 'ignore').decode('utf-8')
+        normalized_name = normalized_name.replace(' ', '')
+        return 'imagesSenadores/{}{}{}.jpg'.format(normalized_name, self.party_number, self.state)
 
 class Proposition(db.Model):
     __tablename__ = 'proposition'

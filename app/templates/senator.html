@@ -10,23 +10,24 @@
   <section class="container flex profile">
     <div class="senadoresProfile">
       <div class="firstdiv">
-        <img src="imagesSenadores/" alt="">
+        <img src="{{ url_for('static', filename=senator.image_url()) }}" alt="">
       </div>
       <div class="boxSenadores">
         <div class="contentName flex">
           <p>{{ senator.name }} </p>
           <span class="socialSenador">
-          <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-          <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/{{ senator.twitter }}" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/{{ senator.facebook }}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/{{ senator.instagram }}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
           </span>
         </div>
         <div class="contentParty">
           <p>({{ senator.party }}-{{ senator.state }})</p>
         </div>
         <div class="contentBio">
-          <p>{{ senator.description }}</p>
-          <i class="sourceBio">fonte: Wikipédia</i>
+          <p>{{ senator.description1 }}</p>
+          <p>{{ senator.description2 }}</p>
+          <i class="sourceBio">fonte: {{ senator.source }}</i>
         </div>
       </div>
     </div>

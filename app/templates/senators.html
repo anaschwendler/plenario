@@ -11,7 +11,7 @@
       {% for senator in senators %}
       <div class="senadoresBox {{ senator.party }} uFRO">
         <a href="/senator/{{ senator.name }}">
-          <img alt="Foto: Divulgação/Senado Federal" src="imagesSenadores/acirgurgacz12ro.jpg">
+          <img alt="Foto: Divulgação/Senado Federal" src="{{ url_for('static', filename=senator.image_url()) }}">
           <p class="senadoresName">{{ senator.name }}</p>
           <p class="senadoresParty">({{ senator.party }}-{{ senator.state }})</p>
         </a>
