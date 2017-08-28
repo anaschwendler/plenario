@@ -4,3 +4,4 @@ Flask-Migrate==1.8.0
 Flask-Alembic==2.0.1
 Psycopg2==2.7.3
 gunicorn==19.7.0
+whitenoise==3.3.0
