@@ -8,3 +8,4 @@ tmp/
 # logs and databases
 *.db
 *.log
+*.sqlite3
